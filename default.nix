@@ -24,6 +24,5 @@ pkgs.mkShell {
     export ACCESS_KEY=""
     export SECRET_KEY=""
     PYTHONPATH=${python-package-set}/${python-package-set.sitePackages}
-    python audiness.py
   '';
 }
