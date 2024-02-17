@@ -12,6 +12,9 @@ let
     pytenable
     isort
     black
+    pytest
+    poetry-core
+    validators
   ]
   );
 in
