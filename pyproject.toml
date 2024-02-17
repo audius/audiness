@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "audiness"
+version = "0.1.0"
+description = "CLI tool to interact with Tenable's Nessus"
+authors = ["Fabian Affolter <fabian-affolter@audius.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = {extras = ["all"], version = "^0.9.0"}
+pytenable = "^1.4.20"
+validators = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^24.2.0"
+isort = "^5.13.2"
+
+[tool.poetry.scripts]
+audiness = "main:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
