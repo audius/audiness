@@ -48,5 +48,5 @@ def create(
     for folder in connection.folders.list():
         if folder["name"] == folder_name:
             print(
-                f'Folder {folder_name} has ID {folder["id"]} and was successully created.'
+                f'Folder {folder_name} has ID {folder["id"]} and was successfully created.'
             )
