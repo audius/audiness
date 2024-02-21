@@ -1,4 +1,4 @@
-"""Interact with scans in Nessus."""
+"""Trigger an update of Nessus."""
 import typer
 
 app = typer.Typer()
