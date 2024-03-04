@@ -22,7 +22,7 @@ def validate_host(value: str):
 
 
 def validate_key(value: str):
-    """Check the lenght of an API key."""
+    """Check the length of an API key."""
     if len(value) != 64:
         raise typer.BadParameter("Key doesn't have the right length")
     return value
