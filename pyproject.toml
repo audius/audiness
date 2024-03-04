@@ -7,6 +7,12 @@ readme = "README.md"
 license = {file = "LICENSE"}
 keywords = ["vulnerabilites", "nessus"]
 
+[project.urls]
+Homepage = "https://github.com/audiusGmbH/audiness"
+Repository = "https://github.com/audiusGmbH/audiness"
+"Bug Tracker" = "https://github.com/audiusGmbH/audiness/issues"
+Changelog = "https://github.com/audiusGmbH/audiness/releases"
+
 [tool.poetry.dependencies]
 python = "^3.11"
 typer = {extras = ["all"], version = "^0.9"}
