@@ -4,6 +4,7 @@ version = "0.2.0"
 description = "CLI tool to interact with Tenable's Nessus"
 authors = ["Fabian Affolter <fabian-affolter@audius.de>"]
 readme = "README.md"
+license = {file = "LICENSE"}
 
 [tool.poetry.dependencies]
 python = "^3.11"
