@@ -17,7 +17,7 @@ black = "^24"
 isort = "^5.13"
 
 [tool.poetry.scripts]
-audiness = "main:app"
+audiness = "audiness.main:app"
 
 [build-system]
 requires = ["poetry-core"]
