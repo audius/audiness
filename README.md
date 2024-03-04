@@ -25,10 +25,11 @@ select ``API keys`` and press the ``Generate`` button.
 
 Note the access key and the secrect key somewhere.
 
-Often it's required to to use port-forwarding to access the Nessus web interface.
+If you don't plan to run `audiness` on the same host as your Nessus instance is running then it
+could be required that you use port-forwarding to access the Nessus web interface through a tunnel.
 
 ```bash
-$ ssh -L 8834:localhost:8834 host.with.nessus
+$ ssh -L 8834:localhost:8834 -l your_user_name host.with.nessus
 ```
 
 ## Usage
