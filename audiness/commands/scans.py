@@ -11,7 +11,7 @@ from rich.progress import track
 from rich.table import Table
 from typing_extensions import Annotated
 
-from helpers import human_readable_datetime
+from audiness.helpers import human_readable_datetime
 
 app = typer.Typer()
 
