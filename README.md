@@ -5,7 +5,7 @@ Nessus installation without using the web interface.
 
 ## Installation
 
-The package is available in the [Python Package Index](https://pypi.python.org/](https://pypi.org/project/audiness/).
+The package is available in the [Python Package Index](https://pypi.org/project/audiness/).
 
 ```bash
 $ pip3 install audiness --user
