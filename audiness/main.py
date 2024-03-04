@@ -2,8 +2,8 @@
 import typer
 from typing_extensions import Annotated
 
-from commands import folders, scans, server, software
-from helpers import setup_connection
+from audiness.commands import folders, scans, server, software
+from audiness.helpers import setup_connection
 from validators import url
 
 app = typer.Typer()
