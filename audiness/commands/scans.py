@@ -50,7 +50,7 @@ def export(
     ctx: typer.Context,
     identifier: Annotated[
         str, typer.Option(help="String for the identification", prompt=True)
-    ] = "SAS_KSB_US_GIW_Industrie",
+    ] = "SAS",
     path: Annotated[
         Optional[Path],
         typer.Option(help="Path to store the exported files", prompt=True),
