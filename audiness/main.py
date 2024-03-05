@@ -1,14 +1,15 @@
 """Main part of audiness."""
 import typer
 from typing_extensions import Annotated
-
-from audiness.commands import folders, scans, server, software
-from audiness.helpers import setup_connection
 from validators import url
+
+from audiness.commands import folders, policies, scans, server, software
+from audiness.helpers import setup_connection
 
 app = typer.Typer()
 
 app.add_typer(folders.app, name="folders")
+app.add_typer(policies.app, name="policies")
 app.add_typer(scans.app, name="scans")
 app.add_typer(server.app, name="server")
 app.add_typer(software.app, name="software")
