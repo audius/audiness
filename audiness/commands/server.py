@@ -48,7 +48,7 @@ def alerts(ctx: typer.Context):
 
 @app.command()
 def status(ctx: typer.Context):
-    """Get the health of the Nessus instance."""
+    """Get the status of the Nessus instance."""
     connection = ctx.obj.get("connection")
 
     status = connection.settings.health()["perf_stats_history"]
