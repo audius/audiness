@@ -21,6 +21,8 @@ let
 in
 pkgs.mkShell {
   buildInputs = [
+    pkgs.git
+    pkgs.poetry
     python-package-set
   ];
 
