@@ -7,13 +7,14 @@
 let
   my-python = pkgs.python3;
   python-package-set = my-python.withPackages (p: with p; [
-    typer
-    rich
-    pytenable
-    isort
     black
-    pytest
+    isort
     poetry-core
+    pytenable
+    pytest
+    rich
+    twine
+    typer
     validators
   ]
   );
