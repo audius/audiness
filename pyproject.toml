@@ -6,12 +6,8 @@ authors = ["Fabian Affolter <fabian-affolter@audius.de>"]
 readme = "README.md"
 license = "MIT"
 keywords = ["vulnerabilites", "nessus"]
-
-[project.urls]
-Homepage = "https://github.com/audiusGmbH/audiness"
-Repository = "https://github.com/audiusGmbH/audiness"
-"Bug Tracker" = "https://github.com/audiusGmbH/audiness/issues"
-Changelog = "https://github.com/audiusGmbH/audiness/releases"
+homepage = "https://github.com/audiusGmbH/audiness"
+repository = "https://github.com/audiusGmbH/audiness"
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -28,5 +24,5 @@ isort = "^5.13"
 audiness = "audiness.main:app"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
