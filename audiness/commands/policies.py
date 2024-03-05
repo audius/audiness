@@ -4,7 +4,6 @@ import typer
 from rich.console import Console
 from rich.table import Table
 from tenable.nessus import Nessus
-from typing_extensions import Annotated
 
 from audiness.helpers import human_readable_datetime
 
