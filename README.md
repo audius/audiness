@@ -11,6 +11,12 @@ The package is available in the [Python Package Index](https://pypi.org/project/
 $ pip3 install audiness --user
 ```
 
+To get the lastest state:
+
+```bash
+$ pip install git+https://github.com/audiusGmbH/audiness.git
+```
+
 For Nix or NixOS users is a package available. Keep in mind that the lastest releases might only
 be present in the ``unstable`` channel.
 
