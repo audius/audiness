@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "audiness"
-version = "0.3.0"
+version = "0.3.1"
 description = "CLI tool to interact with Tenable's Nessus"
 authors = ["Fabian Affolter <fabian-affolter@audius.de>"]
 readme = "README.md"
