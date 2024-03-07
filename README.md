@@ -17,7 +17,8 @@ To get the lastest state:
 $ pip install git+https://github.com/audiusGmbH/audiness.git
 ```
 
-For Nix or NixOS users is a package available. Keep in mind that the lastest releases might only
+For Nix or NixOS users is a [package](https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=audiness)
+available in Nixpkgs. Keep in mind that the lastest releases might only
 be present in the ``unstable`` channel.
 
 ```bash
