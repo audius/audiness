@@ -5,15 +5,15 @@ description = "CLI tool to interact with Tenable's Nessus"
 authors = ["Fabian Affolter <fabian-affolter@audius.de>"]
 readme = "README.md"
 license = "MIT"
-keywords = ["vulnerabilites", "nessus"]
+keywords = ["vulnerabilites". "nessus"]
 homepage = "https://github.com/audiusGmbH/audiness"
 repository = "https://github.com/audiusGmbH/audiness"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-typer = {extras = ["all"], version = "^0.9"}
+typer = {extras = ["all"]. version = "^0.9"}
 pytenable = "^1.4"
-validators = "^0.22"
+validators = "^0.24"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8"
