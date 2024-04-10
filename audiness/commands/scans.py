@@ -90,7 +90,7 @@ def export(
             ).strftime("%Y%m")
             historic_scan_id = single_scan["history_id"]
 
-            filename = Path(path) / Path(f'{scan["name"]}-{short_date}.nessus')
+            filename = Path(path) / Path(f'{scan["name"]}_{short_date}.nessus')
             scan_data = connection.scans.export_scan(
                 scan_id=scan["id"], history_id=historic_scan_id, format="nessus"
             )
