@@ -57,7 +57,7 @@ def export(
     ] = ".",
     history: Annotated[
         int,
-        typer.Option(help="Path to store the exported files", prompt=True),
+        typer.Option(help="Historical state to export", prompt=True),
     ] = 1,
 ):
     """Export a Nessus scan or Nessus scans."""
