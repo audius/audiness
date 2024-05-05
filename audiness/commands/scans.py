@@ -81,7 +81,6 @@ def export(
     try:
         for scan in track(relevant_scans, description="Processing scans ..."):
             scan_history = connection.scans.details(scan["id"])["history"]
-            print(scan_history)
 
             single_scan = scan_history[-abs(history)]
 
