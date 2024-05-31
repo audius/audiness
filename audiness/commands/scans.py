@@ -1,4 +1,5 @@
 """Interact with scans in Nessus."""
+
 import io
 import time
 from datetime import datetime
@@ -63,8 +64,6 @@ def export(
     """Export a Nessus scan or Nessus scans."""
     connection = ctx.obj.get("connection")
 
-    print(f"Export scan(s) ...")
-
     # Get all scans
     scans = connection.scans.list()
 
@@ -72,16 +71,18 @@ def export(
     del scans["timestamp"]
     del scans["folders"]
 
+    failed_exports = []
     relevant_scans = []
+
     for scan in scans["scans"]:
         if scan["name"].startswith(identifier) and scan["status"] == "completed":
             relevant_scans.append(scan)
 
     # Export all scans which matches the identifier
-    try:
-        for scan in track(relevant_scans, description="Processing scans ..."):
-            scan_history = connection.scans.details(scan["id"])["history"]
+    for scan in track(relevant_scans, description="Processing scans ..."):
+        scan_history = connection.scans.details(scan["id"])["history"]
 
+        try:
             single_scan = scan_history[-abs(history)]
 
             short_date = datetime.fromtimestamp(
@@ -90,11 +91,18 @@ def export(
             historic_scan_id = single_scan["history_id"]
 
             filename = Path(path) / Path(f'{scan["name"]}_{short_date}.nessus')
+
             scan_data = connection.scans.export_scan(
                 scan_id=scan["id"], history_id=historic_scan_id, format="nessus"
             )
             Path(filename).write_bytes(scan_data.getbuffer())
-        print(f"{len(relevant_scans)} files exported.")
-    except IndexError:
-        print("Scan not available")
-        return
+        except IndexError:
+            failed_exports.append(scan["name"])
+
+    print(
+        f"{len(relevant_scans)} files selected, {len(relevant_scans)-len(failed_exports)} exported, {len(failed_exports)} failed."
+    )
+    if failed_exports:
+        print(f"Failed exports:")
+        for element in failed_exports:
+            print(element)
