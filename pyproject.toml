@@ -6,8 +6,8 @@ authors = ["Fabian Affolter <fabian-affolter@audius.de>"]
 readme = "README.md"
 license = "MIT"
 keywords = ["vulnerabilites", "nessus"]
-homepage = "https://github.com/audiusGmbH/audiness"
-repository = "https://github.com/audiusGmbH/audiness"
+homepage = "https://github.com/audius/audiness"
+repository = "https://github.com/audius/audiness"
 
 [tool.poetry.dependencies]
 python = "^3.9"
