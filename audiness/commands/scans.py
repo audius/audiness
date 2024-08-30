@@ -50,7 +50,11 @@ def list(ctx: typer.Context):
 def export(
     ctx: typer.Context,
     identifier: Annotated[
-        str, typer.Option(help="String for the identification", prompt=True)
+        str,
+        typer.Option(
+            help="String for the identification. Use 'backup_all' to export all scans of the instance",
+            prompt=True,
+        ),
     ] = "SAS",
     path: Annotated[
         Optional[Path],
@@ -74,9 +78,14 @@ def export(
     failed_exports = []
     relevant_scans = []
 
-    for scan in scans["scans"]:
-        if scan["name"].startswith(identifier) and scan["status"] == "completed":
-            relevant_scans.append(scan)
+    if identifier == "backup_all":
+        for scan in scans["scans"]:
+            if scan["status"] == "completed":
+                relevant_scans.append(scan)
+    else:
+        for scan in scans["scans"]:
+            if scan["name"].startswith(identifier) and scan["status"] == "completed":
+                relevant_scans.append(scan)
 
     # Export all scans which matches the identifier
     for scan in track(relevant_scans, description="Processing scans ..."):
