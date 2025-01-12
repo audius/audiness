@@ -15,7 +15,7 @@ typer = {extras = ["all"], version = "^0.9"}
 pytenable = "^1.4"
 validators = "^0.24"
 
-[tool.poetry.dev-dependencies]
+[poetry.group.dev.dependencies]
 pytest = "^8"
 black = "^24.3"
 isort = "^5.13"
