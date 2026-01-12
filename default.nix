@@ -27,8 +27,8 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    export ACCESS_KEY="ae0bf3d57f8f8f6bcd8d01d3aedde60937d08647da4d89a6eb4dba2a9bee5d5d"
-    export SECRET_KEY="5f671a64819221e6b5c2361016af7dcaeb30de359009fee589b3a5d85dea11b4"
+    export ACCESS_KEY="ae0bf3d57f8f8f6bcd8d01d3aedde60937d08647da4d89a6eb4dba2a9bee5d5d_thats_a_dummy_key"
+    export SECRET_KEY="5f671a64819221e6b5c2361016af7dcaeb30de359009fee589b3a5d85dea11b4_thats_a_dummy_key"
     PYTHONPATH=${python-package-set}/${python-package-set.sitePackages}
   '';
 }
