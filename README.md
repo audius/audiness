@@ -51,7 +51,7 @@ $ audiness --help
 ╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │ *  --access-key                TEXT  Nessus API access key [env var: ACCESS_KEY] [default: None] [required]                    │
 │ *  --secret-key                TEXT  Nessus API secret key [env var: SECRET_KEY] [default: None] [required]                    │
-│    --host                      TEXT  URL to Nessus instance [default: https://localhost:8834]                                  │
+│    --host-key                  TEXT  URL to Nessus instance                                                                    │
 │    --install-completion              Install completion for the current shell.                                                 │
 │    --show-completion                 Show completion for the current shell, to copy it or customize the installation.          │
 │    --help                            Show this message and exit.                                                               │
