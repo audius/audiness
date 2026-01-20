@@ -56,9 +56,9 @@ def export(
         Optional[Path],
         typer.Option(help="Path to store the exported files", prompt=True),
     ] = ".",
-    history: Annotated[
+    history_max: Annotated[
         int,
-        typer.Option(help="Historical state to export", prompt=True),
+        typer.Option(help="Number for bulk download scans from 1 to given value", prompt=True),
     ] = 1,
 ):
     """Export a Nessus scan or Nessus scans."""
@@ -78,31 +78,34 @@ def export(
         if scan["name"].startswith(identifier) and scan["status"] == "completed":
             relevant_scans.append(scan)
 
-    # Export all scans which matches the identifier
-    for scan in track(relevant_scans, description="Processing scans ..."):
-        scan_history = connection.scans.details(scan["id"])["history"]
+    # Downloads all files in given history
+    for act_history in range(1, history_max + 1):
 
-        try:
-            single_scan = scan_history[-abs(history)]
+        # Export all scans which matches the identifier
+        for scan in track(relevant_scans, description="Processing scans ..."):
+            scan_history = connection.scans.details(scan["id"])["history"]
 
-            short_date = datetime.fromtimestamp(
-                single_scan["last_modification_date"]
-            ).strftime("%Y%m")
-            historic_scan_id = single_scan["history_id"]
+            try:
+                single_scan = scan_history[-abs(act_history)]
 
-            filename = Path(path) / Path(f'{scan["name"]}_{short_date}.nessus')
+                short_date = datetime.fromtimestamp(
+                    single_scan["last_modification_date"]
+                ).strftime("%Y%m%d")
+                historic_scan_id = single_scan["history_id"]
 
-            scan_data = connection.scans.export_scan(
-                scan_id=scan["id"], history_id=historic_scan_id, format="nessus"
-            )
-            Path(filename).write_bytes(scan_data.getbuffer())
-        except IndexError:
-            failed_exports.append(scan["name"])
+                filename = Path(path) / Path(f'{scan["name"]}_{short_date}.nessus')
 
-    print(
-        f"{len(relevant_scans)} files selected, {len(relevant_scans)-len(failed_exports)} exported, {len(failed_exports)} failed."
-    )
-    if failed_exports:
-        print(f"Failed exports:")
-        for element in failed_exports:
-            print(element)
+                scan_data = connection.scans.export_scan(
+                    scan_id=scan["id"], history_id=historic_scan_id, format="nessus"
+                )
+                Path(filename).write_bytes(scan_data.getbuffer())
+            except IndexError:
+                failed_exports.append(scan["name"])
+
+        print(
+            f"{len(relevant_scans)} files selected, {len(relevant_scans)-len(failed_exports)} exported, {len(failed_exports)} failed."
+        )
+        if failed_exports:
+            print(f"Failed exports:")
+            for element in failed_exports:
+                print(element)
