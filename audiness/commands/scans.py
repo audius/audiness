@@ -90,7 +90,7 @@ def export(
 
                 short_date = datetime.fromtimestamp(
                     single_scan["last_modification_date"]
-                ).strftime("%Y%m%d")
+                ).strftime("%Y%m%d_%H%M%S")
                 historic_scan_id = single_scan["history_id"]
 
                 filename = Path(path) / Path(f'{scan["name"]}_{short_date}.nessus')
