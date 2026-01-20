@@ -50,11 +50,20 @@ def main(
             callback=validate_key,
         ),
     ],
-    host: Annotated[
-        str, typer.Option(help="URL to Nessus instance", callback=validate_host)
-    ] = "https://localhost:8834",
+    host_url: Annotated[
+        str,
+        typer.Option(
+            envvar="HOST_URL",
+            help="URL to Nessus instance",
+            prompt=True,
+            callback=validate_host,
+        ),
+        ],
+    # host: Annotated[
+    #     str, typer.Option(help="URL to Nessus instance", callback=validate_host)
+    # ] = "https://localhost:8838",
 ):
-    connection = setup_connection(host, access_key, secret_key)
+    connection = setup_connection(host_url, access_key, secret_key)
     ctx.obj = {"connection": connection}
 
 
