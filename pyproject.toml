@@ -16,7 +16,7 @@ pytenable = "^1.8"
 validators = "^0.35"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^8.3.4"
+pytest = "^9"
 
 [poetry.group.dev.dependencies]
 black = "^25.12"
