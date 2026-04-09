@@ -19,7 +19,6 @@ validators = "^0.35"
 pytest = "^9"
 
 [poetry.group.dev.dependencies]
-black = "^25.12"
 isort = "^5.13"
 
 [tool.poetry.scripts]
