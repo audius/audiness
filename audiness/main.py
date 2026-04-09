@@ -1,4 +1,5 @@
 """Main part of audiness."""
+
 import typer
 from typing_extensions import Annotated
 from validators import url

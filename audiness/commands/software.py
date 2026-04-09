@@ -1,4 +1,5 @@
 """Trigger an update of Nessus."""
+
 import typer
 
 app = typer.Typer()
@@ -9,4 +10,4 @@ def update(ctx: typer.Context):
     """Update Nessus."""
     connection = ctx.obj.get("connection")
 
-    connection.software_update.update()    
+    connection.software_update.update()

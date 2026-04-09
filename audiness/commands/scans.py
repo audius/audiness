@@ -90,7 +90,7 @@ def export(
             ).strftime("%Y%m")
             historic_scan_id = single_scan["history_id"]
 
-            filename = Path(path) / Path(f'{scan["name"]}_{short_date}.nessus')
+            filename = Path(path) / Path(f"{scan['name']}_{short_date}.nessus")
 
             scan_data = connection.scans.export_scan(
                 scan_id=scan["id"], history_id=historic_scan_id, format="nessus"
@@ -100,7 +100,7 @@ def export(
             failed_exports.append(scan["name"])
 
     print(
-        f"{len(relevant_scans)} files selected, {len(relevant_scans)-len(failed_exports)} exported, {len(failed_exports)} failed."
+        f"{len(relevant_scans)} files selected, {len(relevant_scans) - len(failed_exports)} exported, {len(failed_exports)} failed."
     )
     if failed_exports:
         print(f"Failed exports:")

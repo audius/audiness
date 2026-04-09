@@ -1,4 +1,5 @@
 """Interact with folders in Nessus."""
+
 import typer
 from restfly.errors import RequestConflictError
 from rich.console import Console
@@ -48,5 +49,5 @@ def create(
     for folder in connection.folders.list():
         if folder["name"] == folder_name:
             print(
-                f'Folder {folder_name} has ID {folder["id"]} and was successfully created.'
+                f"Folder {folder_name} has ID {folder['id']} and was successfully created."
             )
