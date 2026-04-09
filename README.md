@@ -48,26 +48,28 @@ $ audiness --help
                                                                                                                                   
  Usage: audiness [OPTIONS] COMMAND [ARGS]...                                                                                      
                                                                                                                                   
-╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ *  --access-key                TEXT  Nessus API access key [env var: ACCESS_KEY] [default: None] [required]                    │
-│ *  --secret-key                TEXT  Nessus API secret key [env var: SECRET_KEY] [default: None] [required]                    │
-│    --host-key                  TEXT  URL to Nessus instance                                                                    │
-│    --install-completion              Install completion for the current shell.                                                 │
-│    --show-completion                 Show completion for the current shell, to copy it or customize the installation.          │
-│    --help                            Show this message and exit.                                                               │
-╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ folders                                                                                                                        │
-│ scans                                                                                                                          │
-│ server                                                                                                                         │
-│ software                                                                                                                       │
-╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ *  --access-key                TEXT  Nessus API access key [env var: ACCESS_KEY] [required]                             │
+│ *  --secret-key                TEXT  Nessus API secret key [env var: SECRET_KEY] [required]                             │
+│    --url                       TEXT  URL to Nessus instance [env var: URL] [default: https://localhost:8834]            │
+│    --install-completion              Install completion for the current shell.                                          │
+│    --show-completion                 Show completion for the current shell, to copy it or customize the installation.   │
+│    --help                            Show this message and exit.                                                        │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ folders                                                                                                                 │
+│ policies                                                                                                                │
+│ scans                                                                                                                   │
+│ server                                                                                                                  │
+│ software                                                                                                                │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 If you don't want to enter the access key and the secrect key then put them in the
 environment of your shell.
 
 ```bash
+$ exoprt URL="https://localhost:8838"
 $ export ACCESS_KEY="ae0bf3d57f8f8f6bcd8d01d3aedde60937d08647da4d89a6eb4dba2a9bee5d5d"
 $ export SECRET_KEY="5f671a64819221e6b5c2361016af7dcaeb30de359009fee589b3a5d85dea11b4"
 ```
