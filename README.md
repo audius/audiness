@@ -65,7 +65,7 @@ $ audiness --help
 ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-If you don't want to enter the access key and the secrect key then put them in the
+If you don't want to enter the access key and the secret key then put them in the
 environment of your shell.
 
 ```bash
