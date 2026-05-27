@@ -11,7 +11,7 @@ repository = "https://github.com/audius/audiness"
 
 [tool.poetry.dependencies]
 python = "^3.13"
-typer = {extras = ["all"], version = "^0.24"}
+typer = {extras = ["all"], version = "^0.26"}
 pytenable = "^1.9"
 validators = "^0.35"
 
